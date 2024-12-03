@@ -1,0 +1,363 @@
+{
+  "ExportedBy": "StudioWeb",
+  "BundleHash": "H5pxdDxkdCPk4VV8TNunp08NQRhq0RJ9ed28V5ReOM",
+  "Version": "1.0.0.0",
+  "JitAssemblyCompilerCommands": [
+    {
+      "ProviderName": "TypedDataTable",
+      "TypedDataTableDto": {
+        "Id": 6,
+        "IdRef": "NExtractDataGeneric`1_6",
+        "Hash": "NExtractDataGeneric`1_6|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "DataType": "System.Data.DataTable, System.Data.Common",
+        "Columns": [
+          {
+            "ColumnName": "Header",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Header Url",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Dateformat",
+            "DataType": "System.String, System.Private.CoreLib"
+          }
+        ],
+        "RowExtensionProperties": [],
+        "NestedRowExtensionProperties": []
+      },
+      "EntityAssemblyKey": {
+        "Name": "Studio.Generated.TypedDataTable6",
+        "Hash": "NExtractDataGeneric`1_6|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "AssemblyName": "Studio.Generated.TypedDataTable6"
+      }
+    },
+    {
+      "ProviderName": "TypedDataTable",
+      "TypedDataTableDto": {
+        "Id": 5,
+        "IdRef": "NExtractDataGeneric`1_5",
+        "Hash": "NExtractDataGeneric`1_5|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "DataType": "System.Data.DataTable, System.Data.Common",
+        "Columns": [
+          {
+            "ColumnName": "Header",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Header Url",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Dateformat",
+            "DataType": "System.String, System.Private.CoreLib"
+          }
+        ],
+        "RowExtensionProperties": [],
+        "NestedRowExtensionProperties": []
+      },
+      "EntityAssemblyKey": {
+        "Name": "Studio.Generated.TypedDataTable5",
+        "Hash": "NExtractDataGeneric`1_5|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "AssemblyName": "Studio.Generated.TypedDataTable5"
+      }
+    },
+    {
+      "ProviderName": "TypedDataTable",
+      "TypedDataTableDto": {
+        "Id": 4,
+        "IdRef": "NExtractDataGeneric`1_4",
+        "Hash": "NExtractDataGeneric`1_4|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "DataType": "System.Data.DataTable, System.Data.Common",
+        "Columns": [
+          {
+            "ColumnName": "Header",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Header Url",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Dateformat",
+            "DataType": "System.String, System.Private.CoreLib"
+          }
+        ],
+        "RowExtensionProperties": [],
+        "NestedRowExtensionProperties": []
+      },
+      "EntityAssemblyKey": {
+        "Name": "Studio.Generated.TypedDataTable4",
+        "Hash": "NExtractDataGeneric`1_4|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "AssemblyName": "Studio.Generated.TypedDataTable4"
+      }
+    },
+    {
+      "ProviderName": "TypedDataTable",
+      "TypedDataTableDto": {
+        "Id": 2,
+        "IdRef": "NExtractDataGeneric`1_2",
+        "Hash": "NExtractDataGeneric`1_2|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "DataType": "System.Data.DataTable, System.Data.Common",
+        "Columns": [
+          {
+            "ColumnName": "Header",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Header Url",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Dateformat",
+            "DataType": "System.String, System.Private.CoreLib"
+          }
+        ],
+        "RowExtensionProperties": [],
+        "NestedRowExtensionProperties": []
+      },
+      "EntityAssemblyKey": {
+        "Name": "Studio.Generated.TypedDataTable2",
+        "Hash": "NExtractDataGeneric`1_2|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "AssemblyName": "Studio.Generated.TypedDataTable2"
+      }
+    },
+    {
+      "ProviderName": "TypedDataTable",
+      "TypedDataTableDto": {
+        "Id": 1,
+        "IdRef": "NExtractDataGeneric`1_1",
+        "Hash": "NExtractDataGeneric`1_1|DataTable|iJBeP6FNsmYVEMDKioBbIjP69lI82gdUnNIH0",
+        "DataType": "System.Data.DataTable, System.Data.Common",
+        "Columns": [
+          {
+            "ColumnName": "Header",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Header Url",
+            "DataType": "System.String, System.Private.CoreLib"
+          }
+        ],
+        "RowExtensionProperties": [],
+        "NestedRowExtensionProperties": []
+      },
+      "EntityAssemblyKey": {
+        "Name": "Studio.Generated.TypedDataTable1",
+        "Hash": "NExtractDataGeneric`1_1|DataTable|iJBeP6FNsmYVEMDKioBbIjP69lI82gdUnNIH0",
+        "AssemblyName": "Studio.Generated.TypedDataTable1"
+      }
+    },
+    {
+      "ProviderName": "TypedDataTable",
+      "TypedDataTableDto": {
+        "Id": 9,
+        "IdRef": "NExtractDataGeneric`1_10",
+        "Hash": "NExtractDataGeneric`1_10|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "DataType": "System.Data.DataTable, System.Data.Common",
+        "Columns": [
+          {
+            "ColumnName": "Header",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Header Url",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Dateformat",
+            "DataType": "System.String, System.Private.CoreLib"
+          }
+        ],
+        "RowExtensionProperties": [],
+        "NestedRowExtensionProperties": []
+      },
+      "EntityAssemblyKey": {
+        "Name": "Studio.Generated.TypedDataTable9",
+        "Hash": "NExtractDataGeneric`1_10|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "AssemblyName": "Studio.Generated.TypedDataTable9"
+      }
+    },
+    {
+      "ProviderName": "TypedDataTable",
+      "TypedDataTableDto": {
+        "Id": 8,
+        "IdRef": "NExtractDataGeneric`1_9",
+        "Hash": "NExtractDataGeneric`1_9|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "DataType": "System.Data.DataTable, System.Data.Common",
+        "Columns": [
+          {
+            "ColumnName": "Header",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Header Url",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Dateformat",
+            "DataType": "System.String, System.Private.CoreLib"
+          }
+        ],
+        "RowExtensionProperties": [],
+        "NestedRowExtensionProperties": []
+      },
+      "EntityAssemblyKey": {
+        "Name": "Studio.Generated.TypedDataTable8",
+        "Hash": "NExtractDataGeneric`1_9|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "AssemblyName": "Studio.Generated.TypedDataTable8"
+      }
+    },
+    {
+      "ProviderName": "TypedDataTable",
+      "TypedDataTableDto": {
+        "Id": 7,
+        "IdRef": "NExtractDataGeneric`1_8",
+        "Hash": "NExtractDataGeneric`1_8|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "DataType": "System.Data.DataTable, System.Data.Common",
+        "Columns": [
+          {
+            "ColumnName": "Header",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Header Url",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Dateformat",
+            "DataType": "System.String, System.Private.CoreLib"
+          }
+        ],
+        "RowExtensionProperties": [],
+        "NestedRowExtensionProperties": []
+      },
+      "EntityAssemblyKey": {
+        "Name": "Studio.Generated.TypedDataTable7",
+        "Hash": "NExtractDataGeneric`1_8|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "AssemblyName": "Studio.Generated.TypedDataTable7"
+      }
+    },
+    {
+      "ProviderName": "TypedDataTable",
+      "TypedDataTableDto": {
+        "Id": 3,
+        "IdRef": "NExtractDataGeneric`1_3",
+        "Hash": "NExtractDataGeneric`1_3|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "DataType": "System.Data.DataTable, System.Data.Common",
+        "Columns": [
+          {
+            "ColumnName": "Header",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Header Url",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Dateformat",
+            "DataType": "System.String, System.Private.CoreLib"
+          }
+        ],
+        "RowExtensionProperties": [],
+        "NestedRowExtensionProperties": []
+      },
+      "EntityAssemblyKey": {
+        "Name": "Studio.Generated.TypedDataTable3",
+        "Hash": "NExtractDataGeneric`1_3|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "AssemblyName": "Studio.Generated.TypedDataTable3"
+      }
+    },
+    {
+      "ProviderName": "TypedDataTable",
+      "TypedDataTableDto": {
+        "Id": 10,
+        "IdRef": "NExtractDataGeneric`1_2",
+        "Hash": "NExtractDataGeneric`1_2|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "DataType": "System.Data.DataTable, System.Data.Common",
+        "Columns": [
+          {
+            "ColumnName": "Header",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Header Url",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Dateformat",
+            "DataType": "System.String, System.Private.CoreLib"
+          }
+        ],
+        "RowExtensionProperties": [],
+        "NestedRowExtensionProperties": []
+      },
+      "EntityAssemblyKey": {
+        "Name": "Studio.Generated.TypedDataTable10",
+        "Hash": "NExtractDataGeneric`1_2|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "AssemblyName": "Studio.Generated.TypedDataTable10"
+      }
+    },
+    {
+      "ProviderName": "TypedDataTable",
+      "TypedDataTableDto": {
+        "Id": 11,
+        "IdRef": "NExtractDataGeneric`1_3",
+        "Hash": "NExtractDataGeneric`1_3|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "DataType": "System.Data.DataTable, System.Data.Common",
+        "Columns": [
+          {
+            "ColumnName": "Header",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Header Url",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Dateformat",
+            "DataType": "System.String, System.Private.CoreLib"
+          }
+        ],
+        "RowExtensionProperties": [],
+        "NestedRowExtensionProperties": []
+      },
+      "EntityAssemblyKey": {
+        "Name": "Studio.Generated.TypedDataTable11",
+        "Hash": "NExtractDataGeneric`1_3|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "AssemblyName": "Studio.Generated.TypedDataTable11"
+      }
+    },
+    {
+      "ProviderName": "TypedDataTable",
+      "TypedDataTableDto": {
+        "Id": 12,
+        "IdRef": "NExtractDataGeneric`1_10",
+        "Hash": "NExtractDataGeneric`1_10|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "DataType": "System.Data.DataTable, System.Data.Common",
+        "Columns": [
+          {
+            "ColumnName": "Header",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Header Url",
+            "DataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "ColumnName": "Dateformat",
+            "DataType": "System.String, System.Private.CoreLib"
+          }
+        ],
+        "RowExtensionProperties": [],
+        "NestedRowExtensionProperties": []
+      },
+      "EntityAssemblyKey": {
+        "Name": "Studio.Generated.TypedDataTable12",
+        "Hash": "NExtractDataGeneric`1_10|DataTable|DQzTyJoqmdx5KPJE5ItibT0nqzDRJOQVgUEkpU3hA",
+        "AssemblyName": "Studio.Generated.TypedDataTable12"
+      }
+    }
+  ]
+}

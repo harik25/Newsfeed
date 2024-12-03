@@ -1,0 +1,931 @@
+﻿<Activity mc:Ignorable="sap sap2010" x:Class="Main"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib"
+ xmlns:sd="clr-namespace:System.Data;assembly=Studio.Generated.TypedDataTable1"
+ xmlns:sd1="clr-namespace:System.Data;assembly=System.Data.Common"
+ xmlns:sd2="clr-namespace:System.Data;assembly=Studio.Generated.TypedDataTable10"
+ xmlns:sd3="clr-namespace:System.Data;assembly=Studio.Generated.TypedDataTable11"
+ xmlns:sd4="clr-namespace:System.Data;assembly=Studio.Generated.TypedDataTable7"
+ xmlns:sd5="clr-namespace:System.Data;assembly=Studio.Generated.TypedDataTable5"
+ xmlns:sd6="clr-namespace:System.Data;assembly=Studio.Generated.TypedDataTable8"
+ xmlns:sd7="clr-namespace:System.Data;assembly=Studio.Generated.TypedDataTable12"
+ xmlns:sd8="clr-namespace:System.Data;assembly=Studio.Generated.TypedDataTable4"
+ xmlns:sd9="clr-namespace:System.Data;assembly=Studio.Generated.TypedDataTable6"
+ xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities"
+ xmlns:ugage="clr-namespace:UiPath.GSuite.Activities.Gmail.Enums;assembly=UiPath.GSuite.Activities"
+ xmlns:ugagf="clr-namespace:UiPath.GSuite.Activities.Gmail.Filters;assembly=UiPath.GSuite.Activities"
+ xmlns:ugagm="clr-namespace:UiPath.GSuite.Activities.Gmail.Models;assembly=UiPath.GSuite.Activities"
+ xmlns:ugm="clr-namespace:UiPath.GSuite.Models;assembly=UiPath.GSuite"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:uix="http://schemas.uipath.com/workflow/activities/uix"
+ xmlns:umae="clr-namespace:UiPath.MicrosoftOffice365.Activities.Excel;assembly=UiPath.MicrosoftOffice365.Activities"
+ xmlns:umaee="clr-namespace:UiPath.MicrosoftOffice365.Activities.Excel.Enums;assembly=UiPath.MicrosoftOffice365.Activities"
+ xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities"
+ xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities"
+ xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities"
+ xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365"
+ xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform"
+ xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities"
+ xmlns:usau1="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="65">
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System</x:String>
+      <x:String>UiPath.UIAutomationNext</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.Productivity.Activities.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel.Contracts</x:String>
+      <x:String>UiPath.GSuite.Activities.Drive.Enums</x:String>
+      <x:String>UiPath.GSuite.Drive.Models</x:String>
+      <x:String>UiPath.GSuite.Activities.Sheets.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.GSuite.Activities.Sheets.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Design.Services.Contracts</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Filters</x:String>
+      <x:String>UiPath.GSuite.Models</x:String>
+      <x:String>UiPath.Shared.Api.Google.Gmail.Contracts</x:String>
+      <x:String>UiPath.Shared.Api.Google.Gmail.Models</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>Studio.Generated.TypedDataTable12</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable11</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable10</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable9</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable8</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable7</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable6</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable5</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable4</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable3</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable2</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable1</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>Interop.UiPath</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="356,732" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(ugm:GmailMessage)" Default="[new System.Collections.Generic.List(Of UiPath.GSuite.Models.GmailMessage) From {  }]" Name="emails">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">GetEmailListConnections_1</x:String>
+            <x:String x:Key="SourcePropertyName">EmailList</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="scg:List(ugm:GmailMessage)" Default="[new System.Collections.Generic.List(Of UiPath.GSuite.Models.GmailMessage) From {  }]" Name="emails_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">GetEmailListConnections_2</x:String>
+            <x:String x:Key="SourcePropertyName">EmailList</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="Var_header" />
+      <Variable x:TypeArguments="sd1:DataTable" Default="[new System.Data.DataTable]" Name="Var_NewsfeedDatatable" />
+      <Variable x:TypeArguments="x:String" Name="textValue">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">NGetText_2</x:String>
+            <x:String x:Key="SourcePropertyName">TextString</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="workbook">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">CreateWorkbookConnections_1</x:String>
+            <x:String x:Key="SourcePropertyName">Result</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="sd:DataTable1" Default="[new System.Data.DataTable1]" Name="destinationDataTable" />
+      <Variable x:TypeArguments="x:String" Name="var_link" />
+      <Variable x:TypeArguments="sd5:DataTable5" Default="[new System.Data.DataTable5]" Name="destinationDataTable_3" />
+      <Variable x:TypeArguments="sd5:DataTable5" Default="[new System.Data.DataTable5]" Name="destinationDataTable_4" />
+      <Variable x:TypeArguments="sd8:DataTable4" Default="[new System.Data.DataTable4]" Name="destinationDataTable_5" />
+      <Variable x:TypeArguments="sd9:DataTable6" Default="[new System.Data.DataTable6]" Name="destinationDataTable_6" />
+      <Variable x:TypeArguments="x:Int32" Default="[0]" Name="Var_emailcounts" />
+      <Variable x:TypeArguments="sd4:DataTable7" Default="[new System.Data.DataTable7]" Name="destinationDataTable_7" />
+      <Variable x:TypeArguments="sd6:DataTable8" Default="[new System.Data.DataTable8]" Name="destinationDataTable_8" />
+      <Variable x:TypeArguments="sd1:DataTable" Default="[new System.Data.DataTable]" Name="dataTable_Newsfeed" />
+      <Variable x:TypeArguments="x:String" Name="toatl_googlealert" />
+      <Variable x:TypeArguments="x:String" Name="value">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">GetRobotAsset_1</x:String>
+            <x:String x:Key="SourcePropertyName">TextValue</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="sd1:DataTable" Default="[new System.Data.DataTable]" Name="outputDataTable">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">RemoveDuplicateRows_1</x:String>
+            <x:String x:Key="SourcePropertyName">OutputDataTable</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="sd2:DataTable10" Default="[new System.Data.DataTable10]" Name="destinationDataTable_1" />
+      <Variable x:TypeArguments="sd3:DataTable11" Default="[new System.Data.DataTable11]" Name="destinationDataTable_2" />
+      <Variable x:TypeArguments="sd7:DataTable12" Default="[new System.Data.DataTable12]" Name="destinationDataTable_9" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:TimeTrigger DaysOfMonthToRunOn="{x:Null}" HourlyRepeat="{x:Null}" HourlyStartingMinutes="{x:Null}" MonthlyDaysToRunOn="{x:Null}" MonthlyRepeat="{x:Null}" MonthlyStartingTime="{x:Null}" Result="{x:Null}" WeeklyDaysToRunOn="{x:Null}" WeeklyStartingTime="{x:Null}" CronExpression="0 30 17 */1 * ? *" DailyRepeat="1" DailyStartingTime="2024-02-05T17:30" DisplayName="Time Trigger" Frequency="Daily" sap2010:WorkflowViewState.IdRef="TimeTrigger_1" MinuteByMinuteRepeat="1" MonthDaySelection="DayOfMonth" TimeZone="India Standard Time" />
+    <TryCatch DisplayName="Try Catch" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_86">
+          <If Condition="[DateTime.Now.DayOfWeek &gt;= DayOfWeek.Monday AND DateTime.Now.DayOfWeek &lt;= DayOfWeek.Friday]" DisplayName="If - check weekdays" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <If Condition="[DateTime.Now.DayOfWeek = DayOfWeek.Monday]" DisplayName="If - check monday" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Then>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <uga:GetEmailListConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" CurrentIndex="{x:Null}" ManualEntryFolder="{x:Null}" AllLabels="W3siSWQiOiJDSEFUIiwiTmFtZSI6IkNIQVQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNFTlQiLCJOYW1lIjoiU0VOVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiSU5CT1giLCJOYW1lIjoiSU5CT1giLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IklNUE9SVEFOVCIsIk5hbWUiOiJJTVBPUlRBTlQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlRSQVNIIiwiTmFtZSI6IlRSQVNIIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJEUkFGVCIsIk5hbWUiOiJEUkFGVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiU1BBTSIsIk5hbWUiOiJTUEFNIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9GT1JVTVMiLCJOYW1lIjoiQ0FURUdPUllfRk9SVU1TIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9VUERBVEVTIiwiTmFtZSI6IkNBVEVHT1JZX1VQREFURVMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiTmFtZSI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9QUk9NT1RJT05TIiwiTmFtZSI6IkNBVEVHT1JZX1BST01PVElPTlMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1NPQ0lBTCIsIk5hbWUiOiJDQVRFR09SWV9TT0NJQUwiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNUQVJSRUQiLCJOYW1lIjoiU1RBUlJFRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiVU5SRUFEIiwiTmFtZSI6IlVOUkVBRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiTGFiZWxfNTQyMTc4NTQ3NTc3MjA1ODIzOCIsIk5hbWUiOiJHb29nbGUgQWxlcnQgTGFiZWwiLCJUeXBlIjoidXNlciJ9XQ==" AuthScopesInvalid="False" BrowserFolder="Inbox" BrowserFolderLabelId="INBOX" ConnectionId="04445d72-7353-4f6b-adbb-0f134a38930d" DisplayName="Get Email List- Monday" EmailList="[emails]" FolderInputSelectionMode="Browse" sap2010:WorkflowViewState.IdRef="GetEmailListConnections_1" ImportantOnly="False" IncludeSubfolders="False" MarkAsRead="True" MaxResults="1000" StarredOnly="False" UnreadOnly="False" UseConnectionService="True" WithAttachmentsOnly="False">
+                        <uga:GetEmailListConnections.Filter>
+                          <ugagf:MailFilterCollection LogicalOperator="And">
+                            <ugagf:MailFilterCollection.Filters>
+                              <ugagf:MailFilterElement DateEqualsFilter="{x:Null}" Values="{x:Null}" CollectionFilterOperator="In" Criteria="From" DateOperator="NewerThan" StringOperator="Contains" Value="googlealerts-noreply@google.com" />
+                              <ugagf:MailFilterElement Value="{x:Null}" Values="{x:Null}" CollectionFilterOperator="In" Criteria="DateAndTime" DateEqualsFilter="[DateTime.Now.AddDays(-2)]" DateOperator="NewerThan" StringOperator="Contains" />
+                            </ugagf:MailFilterCollection.Filters>
+                          </ugagf:MailFilterCollection>
+                        </uga:GetEmailListConnections.Filter>
+                        <uga:GetEmailListConnections.Folder>
+                          <ugagm:FolderArgument Backup="{x:Reference __ReferenceID0}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="INBOX" BrowserFolderName="Inbox" InputMode="Browse" />
+                        </uga:GetEmailListConnections.Folder>
+                        <uga:GetEmailListConnections.FolderIdBackup>
+                          <usau:BackupSlot x:TypeArguments="ugage:FolderInputMode" x:Name="__ReferenceID0" StoredValue="Browse">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="ugage:FolderInputMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uga:GetEmailListConnections.FolderIdBackup>
+                      </uga:GetEmailListConnections>
+                      <Assign DisplayName="Set Variable Value" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[Var_emailcounts]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[emails.Count]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <uga:GetEmailListConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" CurrentIndex="{x:Null}" ManualEntryFolder="{x:Null}" AllLabels="W3siSWQiOiJDSEFUIiwiTmFtZSI6IkNIQVQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNFTlQiLCJOYW1lIjoiU0VOVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiSU5CT1giLCJOYW1lIjoiSU5CT1giLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IklNUE9SVEFOVCIsIk5hbWUiOiJJTVBPUlRBTlQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlRSQVNIIiwiTmFtZSI6IlRSQVNIIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJEUkFGVCIsIk5hbWUiOiJEUkFGVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiU1BBTSIsIk5hbWUiOiJTUEFNIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9GT1JVTVMiLCJOYW1lIjoiQ0FURUdPUllfRk9SVU1TIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9VUERBVEVTIiwiTmFtZSI6IkNBVEVHT1JZX1VQREFURVMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiTmFtZSI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9QUk9NT1RJT05TIiwiTmFtZSI6IkNBVEVHT1JZX1BST01PVElPTlMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1NPQ0lBTCIsIk5hbWUiOiJDQVRFR09SWV9TT0NJQUwiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNUQVJSRUQiLCJOYW1lIjoiU1RBUlJFRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiVU5SRUFEIiwiTmFtZSI6IlVOUkVBRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiTGFiZWxfNTQyMTc4NTQ3NTc3MjA1ODIzOCIsIk5hbWUiOiJHb29nbGUgQWxlcnQgTGFiZWwiLCJUeXBlIjoidXNlciJ9XQ==" AuthScopesInvalid="False" BrowserFolder="Inbox" BrowserFolderLabelId="INBOX" ConnectionId="04445d72-7353-4f6b-adbb-0f134a38930d" DisplayName="Get Email List - not monday" EmailList="[emails_1]" FolderInputSelectionMode="Browse" sap2010:WorkflowViewState.IdRef="GetEmailListConnections_2" ImportantOnly="False" IncludeSubfolders="False" MarkAsRead="True" MaxResults="1000" StarredOnly="False" UnreadOnly="False" UseConnectionService="True" WithAttachmentsOnly="False">
+                        <uga:GetEmailListConnections.Filter>
+                          <ugagf:MailFilterCollection LogicalOperator="And">
+                            <ugagf:MailFilterCollection.Filters>
+                              <ugagf:MailFilterElement DateEqualsFilter="{x:Null}" Values="{x:Null}" CollectionFilterOperator="In" Criteria="From" DateOperator="NewerThan" StringOperator="Contains" Value="googlealerts-noreply@google.com" />
+                              <ugagf:MailFilterElement Value="{x:Null}" Values="{x:Null}" CollectionFilterOperator="In" Criteria="DateAndTime" DateEqualsFilter="[DateTime.Today]" DateOperator="NewerThan" StringOperator="Contains" />
+                            </ugagf:MailFilterCollection.Filters>
+                          </ugagf:MailFilterCollection>
+                        </uga:GetEmailListConnections.Filter>
+                        <uga:GetEmailListConnections.Folder>
+                          <ugagm:FolderArgument Backup="{x:Reference __ReferenceID1}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="INBOX" BrowserFolderName="Inbox" InputMode="Browse" />
+                        </uga:GetEmailListConnections.Folder>
+                        <uga:GetEmailListConnections.FolderIdBackup>
+                          <usau:BackupSlot x:TypeArguments="ugage:FolderInputMode" x:Name="__ReferenceID1" StoredValue="Browse">
+                            <usau:BackupSlot.BackupValues>
+                              <scg:Dictionary x:TypeArguments="ugage:FolderInputMode, scg:List(x:Object)" />
+                            </usau:BackupSlot.BackupValues>
+                          </usau:BackupSlot>
+                        </uga:GetEmailListConnections.FolderIdBackup>
+                      </uga:GetEmailListConnections>
+                      <Assign DisplayName="Set Variable Value " sap2010:WorkflowViewState.IdRef="Assign_2">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[Var_emailcounts]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[emails_1.Count]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <ui:LogMessage DisplayName="Log Message -Total count" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Total Mail Count is - &quot;+Var_emailcounts.ToString]" />
+                <ui:GenerateDataTable ColumnSeparators="{x:Null}" ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" AutoDetectTypes="False" CSVParsing="True" DataTable="[Var_NewsfeedDatatable]" DisplayName="Generate Data Table From Text" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="Alert,Header,Link" UseColumnHeader="True" />
+                <ui:GenerateDataTable ColumnSeparators="{x:Null}" ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" AutoDetectTypes="False" CSVParsing="True" DataTable="[dataTable_Newsfeed]" DisplayName="Generate Data Table From Text - Newsfeed dt" sap2010:WorkflowViewState.IdRef="GenerateDataTable_2" Input="Alert,Header,Link" UseColumnHeader="True" />
+                <uix:NApplicationCard AttachMode="SingleWindow" ConnectionId="248e93fb970c4e888cd5914a8047f145_1718281802564_R21haWwgbmV3" ConnectionName="Gmail new" DisplayName="Use Browser: Google Alert - penske automotive - newsfeedribot@gmail.com - Gmail" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" IsAuthenticationRequired="True" ScopeGuid="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V2">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <Sequence DisplayName="Sequence - Mail extraction" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                          <uix:NCheckState DisplayName="Check App State 'Welcome, Newsfeed RI'" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap2010:WorkflowViewState.IdRef="Sequence_44" />
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Choose an account'" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://accounts.google.com/InteractiveLogin/signinchooser?elo=1&amp;ifkv=ASKXGp03woCwvjhBOZQTqO3YpozeyFxtbcyMGPzUuCXwK1tkFMSRZtdWOmDGGdUhR0AodgW7ZAbh&amp;theme=glif&amp;flowName=GlifWebSignIn&amp;flowEntry=ServiceLogin" DesignTimeRectangle="611, 262, 673, 90" FullSelectorArgument="&lt;webctrl tag='DIV' aria-role='link' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' aria-role='link' type='' class='lCoei YZVTmd SmR8' aaname='' check:innerText='Newsfeed RI&amp;#xA;newsfeedribot@gmail.com&amp;#xA;Signed out' /&gt;" Guid="e41994c3-6772-4c74-8f6f-08a9500562aa" InformativeScreenshot="e26c1e3cc16b4dadf20af78667f63233.png" ScopeSelectorArgument="&lt;html title='Sign in - Google Accounts' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target DesignTimeRectangle="789, 179, 315, 45" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='SPAN' parentid='headingText' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' parentid='headingText' type='' class='' aaname='Choose an account' check:innerText='Choose an account' /&gt;" Guid="66cacac2-a776-4077-b7b2-0160cce15e20" SearchSteps="FuzzySelector" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                                <uix:NTypeInto ActivateBefore="True" DisplayName="Type Into 'email'" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Text="riqbot2023[k(enter)]" Version="V3">
+                                  <uix:NTypeInto.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://accounts.google.com/v3/signin/challenge/pwd?TL=AHNYTISOcJYZve_yo3GD4J8rsswmo1mQFTGupLwhN8efbClGNpkC0jGQlNzpwjPj&amp;checkConnection&amp;checkedDomains=youtube&amp;cid=1&amp;continue=https://accounts.google.com/ManageAccount?nc%3D1&amp;flowName=GlifWebSignIn&amp;hl=en_GB&amp;ifkv=ASKXGp03woCwvjhBOZQTqO3YpozeyFxtbcyMGPzUuCXwK1tkFMSRZtdWOmDGGdUhR0AodgW7ZAbh&amp;pstMsg=1&amp;theme=glif" DesignTimeRectangle="674, 397, 547, 78" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' class='whsOnd zHQkBf' aaname='' /&gt;" Guid="b635726a-1f0f-4281-915d-80d411a2ed33" InformativeScreenshot="d5403bda136bdcafa812099cb8ee6551.png" ScopeSelectorArgument="&lt;html title='Sign in – Google accounts' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target DesignTimeRectangle="764, 238, 367, 47" FullSelectorArgument="&lt;webctrl tag='DIV' aria-role='link' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' aria-role='link' type='' class='YZrg6 HnRr5d iiFyne cd29Sd kWC5Rd' aaname='' check:innerText='newsfeedribot@gmail.com' /&gt;" Guid="b716b798-4f95-4d48-8f02-92ad31122ee9" SearchSteps="FuzzySelector" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NTypeInto.Target>
+                                </uix:NTypeInto>
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://myaccount.google.com/?utm_source=sign_in_no_continue" DesignTimeRectangle="492, 306, 1260, 54" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='XY0ASe' aaname='Welcome, Newsfeed RI' check:innerText='Welcome, Newsfeed RI' /&gt;" Guid="f28a20ce-59dc-4bf9-9af8-aedc7d1c7bdb" InformativeScreenshot="0b3d45ad7b97f414914eddfceb9c9ade.png" ScopeSelectorArgument="&lt;html title='Google Account' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="1050, 133, 144, 144" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='IMG' class='YPzqGd' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' class='YPzqGd' type='' aaname='' /&gt;" Guid="656f7884-150d-44bf-b6ec-f139ef0785fa" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                          <uix:NGoToUrl ContinueOnError="False" DelayAfter="2" DelayBefore="2" DisplayName="Go To URL" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Url="https://mail.google.com/mail/u/0/?tab=rm&amp;ogbl#inbox" Version="V3" />
+                          <uix:NCheckState DisplayName="Check 'mail logged in' " sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                <ui:LogMessage DisplayName="Log Message 9" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Google Mail Logged IN successfully &quot;]" />
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Inbox'" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://mail.google.com/mail/u/0/#inbox" DesignTimeRectangle="198, 227, 57, 26" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' aria-label='Inbox 6 unread' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' aria-label='Inbox 6 unread' type='' class='J-Ke n0' aaname='Inbox' check:innerText='Inbox' /&gt;" Guid="6fd29899-9516-4919-be27-da14cda12b62" InformativeScreenshot="afa40acea9dfbd79682383160cbd0201.png" ScopeSelectorArgument="&lt;html title='Inbox (6) - newsfeedribot@gmail.com - Gmail' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                                <If Condition="[DateTime.Now.DayOfWeek = DayOfWeek.Monday]" DisplayName="If - check monday typeinto" sap2010:WorkflowViewState.IdRef="If_5">
+                                  <If.Then>
+                                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                      <uix:NTypeInto ActivateBefore="True" DisplayName="Type Into 'tab'" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Text="[string.Format(&quot;{0}[k(enter)]&quot;, &quot;from:(googlealerts-noreply@google.com) after:&quot; + Now.AddDays(-2).ToString(&quot;yyyy/M/d&quot;)&#xA;)]" Version="V3">
+                                        <uix:NTypeInto.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://mail.google.com/mail/u/0/#inbox" DesignTimeRectangle="552, 12, 721, 69" FullSelectorArgument="&lt;webctrl tag='DIV' parentid='aso_search_form_anchor' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' parentid='aso_search_form_anchor' type='' class='gb_Qe gb_Ke' aaname='' check:text='tab' /&gt;" Guid="fbbfec0c-7c4c-43b2-89c8-5a4c12223661" InformativeScreenshot="3bddb5874483a9e942e06be6c9f01af5.png" ScopeSelectorArgument="&lt;html title='Inbox (6) - newsfeedribot@gmail.com - Gmail' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target DesignTimeRectangle="495, 21, 54, 54" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='svg' parentid='aso_search_form_anchor' idx='4' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='svg' parentid='aso_search_form_anchor' type='' class='' aaname='' /&gt;" Guid="3b8b78c4-7793-4aa9-b695-8aa96638a6b8" SearchSteps="FuzzySelector" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NTypeInto.Target>
+                                      </uix:NTypeInto>
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                      <uix:NTypeInto ActivateBefore="True" DisplayName="Type Into 'tab'" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Text="[string.Format(&quot;{0}[k(enter)]&quot;, &quot;from:(googlealerts-noreply@google.com) after:&quot; + Now.ToString(&quot;yyyy/M/d&quot;) )]" Version="V3">
+                                        <uix:NTypeInto.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://mail.google.com/mail/u/0/#inbox" DesignTimeRectangle="552, 12, 721, 69" FullSelectorArgument="&lt;webctrl tag='DIV' parentid='aso_search_form_anchor' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' parentid='aso_search_form_anchor' type='' class='gb_Qe gb_Ke' aaname='' check:text='tab' /&gt;" Guid="ea608ae9-221b-4f0f-be3e-3fe4326b8aa5" InformativeScreenshot="3bddb5874483a9e942e06be6c9f01af5.png" ScopeSelectorArgument="&lt;html title='Inbox (6) - newsfeedribot@gmail.com - Gmail' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target DesignTimeRectangle="495, 21, 54, 54" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='svg' parentid='aso_search_form_anchor' idx='4' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='svg' parentid='aso_search_form_anchor' type='' class='' aaname='' /&gt;" Guid="4bebc65f-5449-40af-8db9-162a6056f14b" SearchSteps="FuzzySelector" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NTypeInto.Target>
+                                      </uix:NTypeInto>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'googlealerts-noreply@go…'" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://mail.google.com/mail/u/0/?tab=rm&amp;ogbl#search/from%3A(googlealerts-noreply%40google.com)+after%3A2024%2F1%2F30+before%3A2024%2F2%2F1" DesignTimeRectangle="645, 382, 252, 30" FullSelectorArgument="&lt;webctrl tag='TABLE' aria-role='grid' parentid='529' /&gt;&lt;webctrl tag='DIV' tableRow='1' id=':151' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' aria-role='grid' parentid='529' /&gt;&lt;webctrl tag='DIV' type='' id=':151' class='yW' aaname='' check:innerText='Google Alerts' /&gt;" Guid="5d6870ee-41b2-4a07-abd3-ce319c9e6882" InformativeScreenshot="25488770d366cf57a16a55d23dbd9c69.png" ScopeSelectorArgument="&lt;html title='Search results - newsfeedribot@gmail.com - Gmail' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target DesignTimeRectangle="570, 274, 270, 33" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='DIV' aria-role='contentinfo' parentid='529' aaname='googlealerts-noreply@google.com' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' aria-role='contentinfo' parentid='529' aaname='googlealerts-noreply@google.com' type='' class='c5 J-J5-Ji' check:innerText='googlealerts-noreply@google.com' /&gt;" Guid="c9e3dfc2-2612-4349-8bc5-d88fb6eb0138" SearchSteps="FuzzySelector" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                                <ui:RepeatNumberOfTimesX DisplayName="Repeat Number of Times" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_1" NumberOfTimes="[Var_emailcounts]" StartAt="1">
+                                  <ui:RepeatNumberOfTimesX.Body>
+                                    <ActivityAction x:TypeArguments="x:Int32">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentItem" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                        <uix:NGetText DisplayName="Get Text 'DIV'" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" TextString="[textValue]" Version="V3">
+                                          <uix:NGetText.Target>
+                                            <uix:TargetAnchorable BrowserURL="https://mail.google.com/mail/u/0/?pli=1#inbox/FMfcgzGxRdsZFllLmrRRBFFngDKKtFMV" DesignTimeRectangle="594, 198, 518, 41" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' parentid=':1' class='hP' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' parentid=':1' class='hP' type='' /&gt;" Guid="fd6733ae-7363-4eb8-a0e5-c10f52f7d536" InformativeScreenshot="e90048128133037f19bc23f2e0f95fbe.png" ScopeSelectorArgument="&lt;html title='Google Alert - penske automotive - newsfeedribot@gmail.com - Gmail' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+                                              <uix:TargetAnchorable.Anchors>
+                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                  <uix:Target DesignTimeRectangle="726, 117, 30, 30" FullSelectorArgument="&lt;webctrl tag='DIV' parentid=':4' class='asa' idx='4' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' parentid=':4' class='asa' type='' aaname='' /&gt;" Guid="5bb90143-aedb-4b85-83d1-52729515b913" SearchSteps="FuzzySelector" />
+                                                </scg:List>
+                                              </uix:TargetAnchorable.Anchors>
+                                            </uix:TargetAnchorable>
+                                          </uix:NGetText.Target>
+                                        </uix:NGetText>
+                                        <Assign DisplayName="Set Variable Value - Header" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[Var_header]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[textValue.Replace("Google Alert - ", "").Replace("""", "")]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <uix:NExtractDataGeneric x:TypeArguments="sd:DataTable1" AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Header'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Header Url'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractedData="[destinationDataTable]" sap2010:WorkflowViewState.IdRef="NExtractDataGeneric`1_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                                          <uix:NExtractDataGeneric.Target>
+                                            <uix:TargetAnchorable DesignTimeRectangle="595, 355, 974, 752" FullSelectorArgument="&lt;webctrl tag='TABLE' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table' /&gt;&lt;webctrl tag='TBODY' /&gt;" Guid="43e78d76-9243-4e82-8a3f-4f8d7e86d9a3" InformativeScreenshot="4cc0d7b06c576082c671620f1c1d4b7c.jpg" ScopeSelectorArgument="&lt;html title='Google Alert - boot barn - newsfeedribot@gmail.com - Gmail' app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None" />
+                                          </uix:NExtractDataGeneric.Target>
+                                        </uix:NExtractDataGeneric>
+                                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[destinationDataTable]" DisplayName="For Each Row in Data Table" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                                          <ui:ForEachRow.Body>
+                                            <ActivityAction x:TypeArguments="sd1:DataRow">
+                                              <ActivityAction.Argument>
+                                                <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentRow" />
+                                              </ActivityAction.Argument>
+                                              <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                                <Assign DisplayName="Set Variable Value 1" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[var_link]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[CurrentRow("Header Url").ToString.Replace("https://www.google.com/url?rct=j&amp;sa=t&amp;url=" , "")]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[new System.Object() { Var_header.ToString,string.Format(&quot;{0}&quot;, CurrentRow(&quot;Header&quot;).Tostring),string.Format(&quot;{0}&quot;, var_link) }]" DataTable="[Var_NewsfeedDatatable]" DisplayName="Add Data Row" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                                              </Sequence>
+                                            </ActivityAction>
+                                          </ui:ForEachRow.Body>
+                                        </ui:ForEachRow>
+                                        <ui:LogMessage DisplayName="Log Message Header" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Var_header +&quot; - &quot;+ destinationDataTable.Rows.Count.ToString]" />
+                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                                          <uix:NClick.Target>
+                                            <uix:TargetAnchorable BrowserURL="https://mail.google.com/mail/u/0/#search/from%3A(googlealerts-noreply%40google.com)+after%3A2024%2F2%2F3/FMfcgzGxRdsZFkcdMJcCvFnjXNnmBTsz" DesignTimeRectangle="1818, 117, 30, 30" DesignTimeScaleFactor="1.5" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='DIV' aria-role='button' aria-label='Older' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' aria-role='button' aria-label='Older' type='' class='T-I J-J5-Ji adg T-I-awG RwtgC T-I-ax7 T-I-Js-Gs T-I-JE L3' aaname='' /&gt;" Guid="fe666f72-ee0d-44b9-b3ab-4df80c73af58" InformativeScreenshot="7efe28019482ca3203484d7043a0b2fc.png" ScopeSelectorArgument="&lt;html title='Google Alert - &amp;quot;Penske&amp;quot; - newsfeedribot@gmail.com - Gmail' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+                                              <uix:TargetAnchorable.Anchors>
+                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                  <uix:Target DesignTimeRectangle="1767, 18, 60, 60" FullSelectorArgument="&lt;webctrl tag='A' aria-role='button' aria-label='Google apps' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' aria-role='button' aria-label='Google apps' type='' class='gb_d' aaname='' /&gt;" Guid="cc22b7b6-127d-4b67-be39-5f3c0f1bfe08" SearchSteps="FuzzySelector" />
+                                                </scg:List>
+                                              </uix:TargetAnchorable.Anchors>
+                                            </uix:TargetAnchorable>
+                                          </uix:NClick.Target>
+                                        </uix:NClick>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:RepeatNumberOfTimesX.Body>
+                                </ui:RepeatNumberOfTimesX>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap2010:WorkflowViewState.IdRef="Sequence_21" />
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://mail.google.com/mail/u/0/#inbox" DesignTimeRectangle="120, 108, 208, 84" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='DIV' aria-role='button' aaname='Compose' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' aria-role='button' aaname='Compose' type='' class='T-I T-I-KE L3' check:innerText='Compose' /&gt;" Guid="d0cdd950-580f-4482-9e56-ccb6d76a2613" InformativeScreenshot="0cb2afef443951691bef50fdf4e6c5b1.png" ScopeSelectorArgument="&lt;html title='Inbox (6) - newsfeedribot@gmail.com - Gmail' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="135, 18, 164, 60" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='IMG' aria-role='presentation' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' aria-role='presentation' type='' class='gb_Lc' aaname='Gmail' /&gt;" Guid="eb7b0f64-213e-445a-b4b9-e292dca7c4af" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                          <Assign DisplayName="Set Variable Value 2" sap2010:WorkflowViewState.IdRef="Assign_5">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[toatl_googlealert]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[Var_NewsfeedDatatable.Rows.Count.ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                        <Sequence DisplayName="Sequence - website" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                          <uix:NGoToUrl DisplayName="Go To URL -Gg" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Url="https://www.grocerygazette.co.uk/category/news/supermarkets/" Version="V3" />
+                          <uix:NCheckState DisplayName="Check App State 'News'" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                <uix:NExtractDataGeneric x:TypeArguments="sd2:DataTable10" AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data 1" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Header'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Header Url'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Dateformat'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='article' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='article' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='h3' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='href'&gt;&lt;webctrl tag='article' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='h3' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='article' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='time' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractedData="[destinationDataTable_1]" sap2010:WorkflowViewState.IdRef="NExtractDataGeneric`1_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                                  <uix:NExtractDataGeneric.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://www.grocerygazette.co.uk/category/news/supermarkets/" DesignTimeRectangle="60, 679, 1261, 4328" FullSelectorArgument="&lt;webctrl tag='DIV' parentid='us_grid_1' /&gt;" Guid="c39052b2-7a01-4a7e-bc47-6dcec90b09f4" InformativeScreenshot="34fa50398e824ccf4a923cc22ec1ebc9.jpg" ScopeSelectorArgument="&lt;html title='Supermarkets Archives - Grocery Gazette - Latest Grocery Industry News' app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None" />
+                                  </uix:NExtractDataGeneric.Target>
+                                </uix:NExtractDataGeneric>
+                                <ui:LogMessage DisplayName="Log Message 1" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Grocery Gazette - &quot; + destinationDataTable_1.Rows.Count.ToString]" />
+                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[destinationDataTable_1]" DisplayName="For Each Row in Data Table 1" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                  <ui:ForEachRow.Body>
+                                    <ActivityAction x:TypeArguments="sd1:DataRow">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentRow" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                        <If Condition="[CurrentRow(&quot;Dateformat&quot;).ToString.Contains(Now.ToString(&quot;MMMM d&quot;))]" DisplayName="If" sap2010:WorkflowViewState.IdRef="If_6">
+                                          <If.Then>
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[new System.Object() { &quot;Grocery Gazette&quot;,string.Format(&quot;{0}&quot;, CurrentRow(&quot;Header&quot;).ToString),string.Format(&quot;{0}&quot;, CurrentRow(&quot;Header Url&quot;).ToString) }]" DataTable="[Var_NewsfeedDatatable]" DisplayName="Add Data Row 9" sap2010:WorkflowViewState.IdRef="AddDataRow_12" />
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_35" />
+                                          </If.Else>
+                                        </If>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEachRow.Body>
+                                </ui:ForEachRow>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap2010:WorkflowViewState.IdRef="Sequence_32" />
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.grocerygazette.co.uk/category/news/supermarkets/" DesignTimeRectangle="544, 136, 118, 56" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' parentid='menu-item-16537' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' parentid='menu-item-16537' type='' class='w-nav-anchor level_1' aaname='News' check:innerText='NEWS' /&gt;" Guid="1449827b-9573-499e-831f-189bfc296267" InformativeScreenshot="d40f2a419cb8b5bccd70923ac17e9053.png" ScopeSelectorArgument="&lt;html title='Supermarkets Archives - Grocery Gazette - Latest Grocery Industry News' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="819, 38, 257, 59" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='attachment-full size-full' aaname='' /&gt;" Guid="2e66b723-3a88-46f4-af9e-45c2a21247b0" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                          <uix:NGoToUrl DisplayName="Go To URL cnbc" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Url="https://www.cnbc.com/business/" Version="V3" />
+                          <uix:NCheckState DisplayName="Check App State 'Business'" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                <uix:NExtractDataGeneric x:TypeArguments="sd3:DataTable11" AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data 2" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Header'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Header Url'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column4' Name='Dateformat'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='0'&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='0' name='Column0' attr='fulltext' name2='Column2' attr2='href'&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column css-selector='.Card-time' name='Column4' attr='fulltext' /&gt;&lt;/extract&gt;" ExtractedData="[destinationDataTable_2]" sap2010:WorkflowViewState.IdRef="NExtractDataGeneric`1_3" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                                  <uix:NExtractDataGeneric.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://www.cnbc.com/business/" DesignTimeRectangle="0, -472, 1825, 5430" FullSelectorArgument="&lt;webctrl tag='DIV' parentid='MainContentContainer' class='PageBuilder-pageWrapper' /&gt;" Guid="edfda2a9-13b0-4e91-98ae-ffd3b0d79fdc" InformativeScreenshot="074666ec85c662aa5bb89187a3fec2df.jpg" ScopeSelectorArgument="&lt;html htmlwindowname='55958350' title='Business News' app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None" />
+                                  </uix:NExtractDataGeneric.Target>
+                                </uix:NExtractDataGeneric>
+                                <ui:LogMessage DisplayName="Log Message 2" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;CNBC Business - &quot; + destinationDataTable_2.Rows.Count.ToString]" />
+                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[destinationDataTable_2]" DisplayName="For Each Row in Data Table 2" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                                  <ui:ForEachRow.Body>
+                                    <ActivityAction x:TypeArguments="sd1:DataRow">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentRow" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                        <If Condition="[CurrentRow(&quot;Dateformat&quot;).ToString.Contains(&quot;2024&quot;)]" DisplayName="If 1" sap2010:WorkflowViewState.IdRef="If_7">
+                                          <If.Then>
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[new System.Object() { &quot;CNBC Business&quot;,CurrentRow(&quot;Header&quot;).ToString,CurrentRow(&quot;Header Url&quot;).ToString }]" DataTable="[Var_NewsfeedDatatable]" DisplayName="Add Data Row 10" sap2010:WorkflowViewState.IdRef="AddDataRow_13" />
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_43" />
+                                          </If.Else>
+                                        </If>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEachRow.Body>
+                                </ui:ForEachRow>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap2010:WorkflowViewState.IdRef="Sequence_40" />
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.cnbc.com/business/" DesignTimeRectangle="401, 76, 106, 45" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='SPAN' class='nav-menu-buttonText' aaname='Business' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' class='nav-menu-buttonText' aaname='Business' type='' check:innerText='BUSINESS' /&gt;" Guid="a0616e52-5443-48bd-9b6b-cadfa8ce0e29" InformativeScreenshot="7af5b5d005c0dbce160241c44ac48dc2.png" ScopeSelectorArgument="&lt;html htmlwindowname='5555449' title='Business News' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="228, 20, 234, 36" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='branding-menu-logo' aaname='logo' /&gt;" Guid="59c7e03c-332b-4f82-aeeb-81ae30349884" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                          <uix:NGoToUrl DisplayName="Go To URL wsj bus" sap2010:WorkflowViewState.IdRef="NGoToUrl_4" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Url="https://www.wsj.com/business?mod=nav_top_section" Version="V3" />
+                          <uix:NCheckState DisplayName="Check App State 'WSJ Business'" sap2010:WorkflowViewState.IdRef="NCheckState_13" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                                <uix:NExtractDataGeneric x:TypeArguments="sd4:DataTable7" AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data 5" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Header'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Header Url'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Dateformat'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h3' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractedData="[destinationDataTable_7]" sap2010:WorkflowViewState.IdRef="NExtractDataGeneric`1_8" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                                  <uix:NExtractDataGeneric.Target>
+                                    <uix:TargetAnchorable DesignTimeRectangle="0, -358, 1895, 10768" FullSelectorArgument="&lt;webctrl tag='MAIN' /&gt;" Guid="00d95dd0-1a93-42d9-80f4-625edd3f3fd1" InformativeScreenshot="74311c4c04d70366193a2389c2199309.jpg" ScopeSelectorArgument="&lt;html htmlwindowname='EoUkHZk6' title='Business - WSJ.com' app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None" />
+                                  </uix:NExtractDataGeneric.Target>
+                                </uix:NExtractDataGeneric>
+                                <ui:LogMessage DisplayName="Log Message 6" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;WSJ Business - &quot; + destinationDataTable_7.rows.Count.ToString]" />
+                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[destinationDataTable_7]" DisplayName="For Each Row in Data Table 5" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
+                                  <ui:ForEachRow.Body>
+                                    <ActivityAction x:TypeArguments="sd1:DataRow">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentRow" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                                        <If Condition="[CurrentRow(&quot;Dateformat&quot;).ToString.Contains(&quot;ago&quot;)]" DisplayName="If 4" sap2010:WorkflowViewState.IdRef="If_12">
+                                          <If.Then>
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_72">
+                                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[new System.Object() { &quot;WSJ Business&quot;,CurrentRow(&quot;Header&quot;).ToString,CurrentRow(&quot;Header Url&quot;).ToString }]" DataTable="[Var_NewsfeedDatatable]" DisplayName="Add Data Row 11" sap2010:WorkflowViewState.IdRef="AddDataRow_14" />
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_73" />
+                                          </If.Else>
+                                        </If>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEachRow.Body>
+                                </ui:ForEachRow>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap2010:WorkflowViewState.IdRef="Sequence_70" />
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.wsj.com/business?mod=nav_top_section" DesignTimeRectangle="433, 193, 83, 36" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='SPAN' aaname='Business' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' aaname='Business' type='' class='css-a4j60e-NavItemLabel e15d4pvj2' check:innerText='Business' /&gt;" Guid="ea9fea31-d421-46b3-8046-06a226d93466" InformativeScreenshot="f22f0633d021371a4f18879970944874.png" ScopeSelectorArgument="&lt;html htmlwindowname='EoUkHZk6' title='Business - WSJ.com' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="520, 60, 855, 98" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='css-1mfc0qr-LogoBase-BrandLogo e1ykv1k51' aaname='' /&gt;" Guid="30f46b3b-7f59-4b17-9432-52bbe8b686fb" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                          <uix:NGoToUrl DisplayName="Go To URL wsj eco" sap2010:WorkflowViewState.IdRef="NGoToUrl_5" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Url="https://www.wsj.com/economy?mod=nav_top_section" Version="V3" />
+                          <uix:NCheckState DisplayName="Check App State 'Economy Wsj'" sap2010:WorkflowViewState.IdRef="NCheckState_9" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                                <uix:NExtractDataGeneric x:TypeArguments="sd5:DataTable5" AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data 3" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Header'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Header Url'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Dateformat'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h3' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractedData="[destinationDataTable_4]" sap2010:WorkflowViewState.IdRef="NExtractDataGeneric`1_5" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                                  <uix:NExtractDataGeneric.Target>
+                                    <uix:TargetAnchorable DesignTimeRectangle="0, -2908, 1895, 10768" FullSelectorArgument="&lt;webctrl tag='MAIN' /&gt;" Guid="79fb6a3a-856b-4dbb-ae1c-016151c30675" InformativeScreenshot="622667237a5c55ee0f3981479358cef3.jpg" ScopeSelectorArgument="&lt;html htmlwindowname='EoUkHZk6' title='Business - WSJ.com' app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None" />
+                                  </uix:NExtractDataGeneric.Target>
+                                </uix:NExtractDataGeneric>
+                                <ui:LogMessage DisplayName="Log Message 4" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;WSJ Economy - &quot; + destinationDataTable_4.Rows.Count.ToString]" />
+                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[destinationDataTable_4]" DisplayName="For Each Row in Data Table 3" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+                                  <ui:ForEachRow.Body>
+                                    <ActivityAction x:TypeArguments="sd1:DataRow">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentRow" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                        <If Condition="[CurrentRow(&quot;Dateformat&quot;).ToString.Contains(&quot;ago&quot;)]" DisplayName="If 2" sap2010:WorkflowViewState.IdRef="If_9">
+                                          <If.Then>
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[new System.Object() { &quot;WSJ Economy&quot;,string.Format(&quot;{0}&quot;, CurrentRow(&quot;Header&quot;).ToString),string.Format(&quot;{0}&quot;, CurrentRow(&quot;Header Url&quot;).ToString) }]" DataTable="[Var_NewsfeedDatatable]" DisplayName="Add Data Row 12" sap2010:WorkflowViewState.IdRef="AddDataRow_15" />
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_56" />
+                                          </If.Else>
+                                        </If>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEachRow.Body>
+                                </ui:ForEachRow>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap2010:WorkflowViewState.IdRef="Sequence_53" />
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.wsj.com/business?mod=nav_top_section" DesignTimeRectangle="433, 193, 83, 36" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='SPAN' aaname='Business' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' aaname='Business' type='' class='css-a4j60e-NavItemLabel e15d4pvj2' check:innerText='Business' /&gt;" Guid="d866b970-66ce-43d2-8ce5-43a59bc08b8a" InformativeScreenshot="f22f0633d021371a4f18879970944874.png" ScopeSelectorArgument="&lt;html htmlwindowname='EoUkHZk6' title='Business - WSJ.com' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="520, 60, 855, 98" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='css-1mfc0qr-LogoBase-BrandLogo e1ykv1k51' aaname='' /&gt;" Guid="c0b8cb30-4257-4d23-8fbb-c86e3c113344" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                          <uix:NGoToUrl DisplayName="Go To URL FT" sap2010:WorkflowViewState.IdRef="NGoToUrl_6" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Url="https://www.ft.com/global-economy" Version="V3" />
+                          <uix:NExtractDataGeneric x:TypeArguments="sd6:DataTable8" AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data 6" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Header'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Header Url'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Dateformat'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='time' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractedData="[destinationDataTable_8]" sap2010:WorkflowViewState.IdRef="NExtractDataGeneric`1_9" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                            <uix:NExtractDataGeneric.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.ft.com/global-economy" DesignTimeRectangle="63, 676, 1169, 6006" ElementType="List" FullSelectorArgument="&lt;webctrl tag='UL' parentid='stream' /&gt;" Guid="de2affd1-06d8-43a0-91d0-e40ab1b58e39" InformativeScreenshot="bb4d773ebf7cfd8dbd88a8a0280d47cd.jpg" ScopeSelectorArgument="&lt;html title='Global Economy' app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None" />
+                            </uix:NExtractDataGeneric.Target>
+                          </uix:NExtractDataGeneric>
+                          <ui:LogMessage DisplayName="Log Message 7" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;FT Economy - &quot; + destinationDataTable_8.Rows.Count.ToString]" />
+                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[destinationDataTable_8]" DisplayName="For Each Row in Data Table 6" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
+                            <ui:ForEachRow.Body>
+                              <ActivityAction x:TypeArguments="sd1:DataRow">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentRow" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                                  <If Condition="[CurrentRow(&quot;Dateformat&quot;).ToString.Contains(Now.ToString(&quot;d yyyy&quot;))]" DisplayName="If 5" sap2010:WorkflowViewState.IdRef="If_13">
+                                    <If.Then>
+                                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_75">
+                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[new System.Object() { &quot;FT Economy&quot;,CurrentRow(&quot;Header&quot;).ToString,CurrentRow(&quot;Header Url&quot;).ToString }]" DataTable="[Var_NewsfeedDatatable]" DisplayName="Add Data Row 13" sap2010:WorkflowViewState.IdRef="AddDataRow_16" />
+                                      </Sequence>
+                                    </If.Then>
+                                    <If.Else>
+                                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_76" />
+                                    </If.Else>
+                                  </If>
+                                </Sequence>
+                              </ActivityAction>
+                            </ui:ForEachRow.Body>
+                          </ui:ForEachRow>
+                          <uix:NGoToUrl DisplayName="Go To URL Bloomberg" sap2010:WorkflowViewState.IdRef="NGoToUrl_7" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Url="https://www.bloomberg.com/economics" Version="V3" />
+                          <uix:NCheckState DisplayName="Check App State 'Bloomberg'" sap2010:WorkflowViewState.IdRef="NCheckState_14" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap2010:WorkflowViewState.IdRef="Sequence_77">
+                                <uix:NExtractDataGeneric x:TypeArguments="sd7:DataTable12" AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data 7" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Header'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Header Url'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA; &lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Dateformat'&gt;&#xA;  &lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;  &lt;ValidationErrorMessage /&gt;&#xA;  &lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;  &lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;  &lt;Format xsi:type='TextColumnFormat' /&gt;&#xA; &lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='5' /&gt;&lt;webctrl tag='section' idx='3' /&gt;&lt;webctrl tag='section' idx='2' /&gt;&lt;webctrl tag='section' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column1' attr2='href'&gt;&lt;webctrl tag='div' idx='5' /&gt;&lt;webctrl tag='section' idx='3' /&gt;&lt;webctrl tag='section' idx='2' /&gt;&lt;webctrl tag='section' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' idx='5' /&gt;&lt;webctrl tag='section' idx='3' /&gt;&lt;webctrl tag='section' idx='2' /&gt;&lt;webctrl tag='section' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='time' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" ExtractedData="[destinationDataTable_9]" sap2010:WorkflowViewState.IdRef="NExtractDataGeneric`1_10" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="f05f8424-77ce-4029-a2e1-79d1af1b04fb" Version="V3">
+                                  <uix:NExtractDataGeneric.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://www.bloomberg.com/economics" DesignTimeRectangle="0, -2226, 1825, 9598" FullSelectorArgument="&lt;webctrl tag='DIV' parentid='__next' class='media-ui-LeaderboardAd_parallaxWrapper-JMVgdxR--aU-' /&gt;" Guid="dab39083-d19f-4272-b913-4900a26e7a02" InformativeScreenshot="257ec891130842d8a05c3b357dc9fca6.jpg" ScopeSelectorArgument="&lt;html title='Economics - Bloomberg' app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" WaitForReadyArgument="None" />
+                                  </uix:NExtractDataGeneric.Target>
+                                </uix:NExtractDataGeneric>
+                                <ui:LogMessage DisplayName="Log Message 8" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Bloomberg - &quot; + destinationDataTable_9.Rows.Count.ToString]" />
+                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[destinationDataTable_9]" DisplayName="For Each Row in Data Table 7" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
+                                  <ui:ForEachRow.Body>
+                                    <ActivityAction x:TypeArguments="sd1:DataRow">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentRow" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_79">
+                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[new System.Object() { &quot;Bloomberg&quot;,CurrentRow(&quot;Header&quot;).Tostring,CurrentRow(&quot;Header Url&quot;).Tostring }]" DataTable="[Var_NewsfeedDatatable]" DisplayName="Add Data Row 14" sap2010:WorkflowViewState.IdRef="AddDataRow_17" />
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEachRow.Body>
+                                </ui:ForEachRow>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap2010:WorkflowViewState.IdRef="Sequence_78" />
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.bloomberg.com/asia" DesignTimeRectangle="48, 552, 267, 54" DesignTimeScaleFactor="1.5" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='navi-bar__logo-img' aaname='Bloomberg' /&gt;" Guid="9e4f22a5-0dc8-4016-897c-9d18dade0694" InformativeScreenshot="a72d26368b6e7778040e377b81dbf6bd.png" ScopeSelectorArgument="&lt;html title='Bloomberg.com' app='chrome.exe' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="309, 650, 112, 42" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' id='navi-section-link-economics' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' id='navi-section-link-economics' type='' class='navi-sections__link' aaname=' Economics ' check:innerText='Economics' /&gt;" Guid="cffefe1a-0c3e-44ae-a6d8-85a25fb75425" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                        </Sequence>
+                        <Sequence DisplayName="Sequence File" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[Var_NewsfeedDatatable]" DisplayName="For Each Row in Data Table - Validate" sap2010:WorkflowViewState.IdRef="ForEachRow_11">
+                            <ui:ForEachRow.Body>
+                              <ActivityAction x:TypeArguments="sd1:DataRow">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentRow" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_82">
+                                  <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Newsfeed Keywords" CacheStrategy="None" DisplayName="Get Asset" FolderPath="hari@qbotica.com's workspace" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+                                    <ui:GetRobotAsset.Value>
+                                      <OutArgument x:TypeArguments="x:String">[value]</OutArgument>
+                                    </ui:GetRobotAsset.Value>
+                                  </ui:GetRobotAsset>
+                                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentItem" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[value.Split(&quot;,&quot;)]">
+                                    <ui:ForEach.Body>
+                                      <ActivityAction x:TypeArguments="x:String">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
+                                        </ActivityAction.Argument>
+                                        <Sequence DisplayName="" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                                          <If Condition="[CurrentRow(&quot;Header&quot;).ToString.Contains(currentItem)]" DisplayName="If 7" sap2010:WorkflowViewState.IdRef="If_15">
+                                            <If.Then>
+                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_83">
+                                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[new System.Object() { CurrentRow(&quot;Alert&quot;).ToString,CurrentRow(&quot;Header&quot;).ToString,CurrentRow(&quot;Link&quot;).ToString }]" DataTable="[dataTable_Newsfeed]" DisplayName="Add Data Row 8" sap2010:WorkflowViewState.IdRef="AddDataRow_11" />
+                                              </Sequence>
+                                            </If.Then>
+                                            <If.Else>
+                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_84" />
+                                            </If.Else>
+                                          </If>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </ui:ForEach.Body>
+                                  </ui:ForEach>
+                                </Sequence>
+                              </ActivityAction>
+                            </ui:ForEachRow.Body>
+                          </ui:ForEachRow>
+                          <ui:RemoveDuplicateRows DataTable="[dataTable_Newsfeed]" DisplayName="Remove Duplicate Rows" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[outputDataTable]" />
+                          <umae:CreateWorkbookConnections BrowserParentItemId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" AuthScopesInvalid="False" BrowserDriveId="b!wltp6j1kwEK-FxoQG1AMRxXEUsBjdtJFqXzzEwX1R5PDOpoXVUBXQoNOUNIH0_MH" BrowserDriveName="OneDrive" BrowserItemFriendlyName="Newsfeed Report 2024" BrowserItemId="01K7NFGIJC2GKCLRNLUFH2EDQZW22VBZSU" BrowserSiteUrl="https://qbotica-my.sharepoint.com/personal/hari_qbotica_com/Documents" ConflictResolution="[UiPath.MicrosoftOffice365.Enums.ConflictBehavior.Replace]" ConnectionId="6f2dd2dc-2c9d-4166-ab73-a04e06ba17c8" DisplayName="Create Workbook" FirstSheetName="[DateTime.Now.ToString(&quot;ddMMMyyyy&quot;)]" sap2010:WorkflowViewState.IdRef="CreateWorkbookConnections_1" ItemSelectionMode="Browse" Result="[workbook]" UseConnectionService="True" WorkbookName="[&quot;RI_Newsfeed_&quot; + DateTime.Now.ToString(&quot;ddMMMyyyy&quot;)]">
+                            <umae:CreateWorkbookConnections.ItemIdBackup>
+                              <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" StoredValue="Browse">
+                                <usau1:BackupSlot.BackupValues>
+                                  <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                                </usau1:BackupSlot.BackupValues>
+                              </usau1:BackupSlot>
+                            </umae:CreateWorkbookConnections.ItemIdBackup>
+                          </umae:CreateWorkbookConnections>
+                          <umae:WriteRangeConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" TemplateBrowserDriveName="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" TemplateBrowserSiteUrl="{x:Null}" WorkbookSample="{x:Null}" AuthScopesInvalid="False" ConnectionId="6f2dd2dc-2c9d-4166-ab73-a04e06ba17c8" DisplayName="Write Range" sap2010:WorkflowViewState.IdRef="WriteRangeConnections_1" IncludeHeaders="True" Item="[workbook]" ItemSelectionMode="UseExisting" Range="[DateTime.Now.ToString(&quot;ddMMMyyyy&quot;)]" RangeMode="Default" RowPosition="0" Source="[outputDataTable]" UseConnectionService="True" WorkingWithTemplateWorkbook="False" WriteMode="Overwrite">
+                            <umae:WriteRangeConnections.ItemIdBackup>
+                              <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" StoredValue="UseExisting">
+                                <usau1:BackupSlot.BackupValues>
+                                  <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="4">
+                                    <x:Null />
+                                    <x:Null />
+                                    <x:Null />
+                                  </scg:List>
+                                </usau1:BackupSlot.BackupValues>
+                              </usau1:BackupSlot>
+                            </umae:WriteRangeConnections.ItemIdBackup>
+                            <umae:WriteRangeConnections.RangeWriteModeBackup>
+                              <usau1:BackupSlot x:TypeArguments="umaee:RangeWriteMode" StoredValue="Overwrite">
+                                <usau1:BackupSlot.BackupValues>
+                                  <scg:Dictionary x:TypeArguments="umaee:RangeWriteMode, scg:List(x:Object)" />
+                                </usau1:BackupSlot.BackupValues>
+                              </usau1:BackupSlot>
+                            </umae:WriteRangeConnections.RangeWriteModeBackup>
+                          </umae:WriteRangeConnections>
+                          <umae:AddSheetConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" NewSheetName="{x:Null}" AuthScopesInvalid="False" ConnectionId="6f2dd2dc-2c9d-4166-ab73-a04e06ba17c8" DisplayName="Add Sheet" sap2010:WorkflowViewState.IdRef="AddSheetConnections_1" Item="[workbook]" ItemSelectionMode="UseExisting" SheetName="Internal" UseConnectionService="True">
+                            <umae:AddSheetConnections.ItemIdBackup>
+                              <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" StoredValue="UseExisting">
+                                <usau1:BackupSlot.BackupValues>
+                                  <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="3">
+                                    <x:Null />
+                                    <x:Null />
+                                    <x:Null />
+                                  </scg:List>
+                                </usau1:BackupSlot.BackupValues>
+                              </usau1:BackupSlot>
+                            </umae:AddSheetConnections.ItemIdBackup>
+                          </umae:AddSheetConnections>
+                          <umae:WriteRangeConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" TemplateBrowserDriveName="{x:Null}" TemplateBrowserItemFriendlyName="{x:Null}" TemplateBrowserItemId="{x:Null}" TemplateBrowserSiteUrl="{x:Null}" WorkbookSample="{x:Null}" AuthScopesInvalid="False" ConnectionId="6f2dd2dc-2c9d-4166-ab73-a04e06ba17c8" DisplayName="Write Range -INTERNAL" sap2010:WorkflowViewState.IdRef="WriteRangeConnections_3" IncludeHeaders="True" Item="[workbook]" ItemSelectionMode="UseExisting" Range="Internal" RangeMode="Default" RowPosition="0" Source="[Var_NewsfeedDatatable]" UseConnectionService="True" WorkingWithTemplateWorkbook="False" WriteMode="Overwrite">
+                            <umae:WriteRangeConnections.ItemIdBackup>
+                              <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" StoredValue="UseExisting">
+                                <usau1:BackupSlot.BackupValues>
+                                  <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="3">
+                                    <x:Null />
+                                    <x:Null />
+                                    <x:Null />
+                                  </scg:List>
+                                </usau1:BackupSlot.BackupValues>
+                              </usau1:BackupSlot>
+                            </umae:WriteRangeConnections.ItemIdBackup>
+                            <umae:WriteRangeConnections.RangeWriteModeBackup>
+                              <usau1:BackupSlot x:TypeArguments="umaee:RangeWriteMode" StoredValue="Overwrite">
+                                <usau1:BackupSlot.BackupValues>
+                                  <scg:Dictionary x:TypeArguments="umaee:RangeWriteMode, scg:List(x:Object)" />
+                                </usau1:BackupSlot.BackupValues>
+                              </usau1:BackupSlot>
+                            </umae:WriteRangeConnections.RangeWriteModeBackup>
+                          </umae:WriteRangeConnections>
+                          <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Builder" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;p&gt;Hi,&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Total Mail Received -&amp;nbsp;&amp;nbsp;{0}&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Total Google Alert News -&amp;nbsp;&amp;nbsp;{1}&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Grocery Gazette -&amp;nbsp;&amp;nbsp;{2}&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;CNBC Business -&amp;nbsp;&amp;nbsp;{3}&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;WSJ Economy -&amp;nbsp;&amp;nbsp;{4}&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;WSJ Business -&amp;nbsp;&amp;nbsp;{5}&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;FT Economy -&amp;nbsp;&amp;nbsp;{6}&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Bloomberg -&amp;nbsp;&amp;nbsp;{7}&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Total News -&amp;nbsp;&amp;nbsp;&lt;/strong&gt;{8}&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Total Validated News -&amp;nbsp;&amp;nbsp;{9}&lt;/strong&gt;&lt;br&gt;&lt;br&gt;Thanks,&lt;/p&gt;&quot;, Var_emailcounts.ToString, toatl_googlealert, destinationDataTable_1.Rows.Count.ToString, destinationDataTable_2.Rows.Count.ToString, destinationDataTable_4.Rows.Count.ToString, destinationDataTable_7.Rows.Count.ToString, destinationDataTable_8.Rows.Count.ToString, destinationDataTable_9.Rows.Count.ToString, Var_NewsfeedDatatable.Rows.Count.ToString, dataTable_Newsfeed.Rows.Count.ToString)]" ConnectionId="a2a13f85-bf0f-4957-8c6e-ebda3fbc1a36" DisplayName="Send Email" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[&quot;RI_Newsfeed_&quot; + DateTime.Now.ToString(&quot;ddMMMyyyy&quot;)]" To="[New String(){&quot;hari@qbotica.com&quot;,&quot;sharmila.a@qbotica.com&quot;,&quot;roshini.s@qbotica.com&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
+                            <umam:SendMailConnections.AttachmentList>
+                              <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="4">
+                                <InArgument x:TypeArguments="upr:IResource">[workbook]</InArgument>
+                              </scg:List>
+                            </umam:SendMailConnections.AttachmentList>
+                            <umam:SendMailConnections.AttachmentsBackup>
+                              <usau1:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Builder">
+                                <usau1:BackupSlot.BackupValues>
+                                  <scg:List x:TypeArguments="x:Object" x:Key="Existing" Capacity="1">
+                                    <x:Null />
+                                  </scg:List>
+                                </usau1:BackupSlot.BackupValues>
+                              </usau1:BackupSlot>
+                            </umam:SendMailConnections.AttachmentsBackup>
+                            <umam:SendMailConnections.InputTypeBackup>
+                              <usau1:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="HTML">
+                                <usau1:BackupSlot.BackupValues>
+                                  <scg:Dictionary x:TypeArguments="umame:BodyInputType, scg:List(x:Object)" />
+                                </usau1:BackupSlot.BackupValues>
+                              </usau1:BackupSlot>
+                            </umam:SendMailConnections.InputTypeBackup>
+                            <umam:SendMailConnections.MailboxBackup>
+                              <usau1:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" StoredValue="NoMailbox">
+                                <usau1:BackupSlot.BackupValues>
+                                  <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                                </usau1:BackupSlot.BackupValues>
+                              </usau1:BackupSlot>
+                            </umam:SendMailConnections.MailboxBackup>
+                          </umam:SendMailConnections>
+                        </Sequence>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" InformativeScreenshot="c04f240e57980ba9ce7c417a2fe6564f.jpg" Selector="&lt;html title='Google Alert - penske automotive - newsfeedribot@gmail.com - Gmail' app='chrome.exe' /&gt;" Title="Google Alert - penske automotive - newsfeedribot@gmail.com - Gmail" Url="https://myaccount.google.com/?utm_source=sign_in_no_continue" />
+                  </uix:NApplicationCard.TargetApp>
+                </uix:NApplicationCard>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[String.Concat(&quot;Today is &quot;, DateTime.Now.DayOfWeek)]" />
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_88">
+              <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Builder" AuthScopesInvalid="False" Body="&lt;p&gt;Hi,&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Exception , Please Check !!&lt;/strong&gt;&lt;br&gt;&lt;br&gt;Thanks,&lt;/p&gt;" ConnectionId="a2a13f85-bf0f-4957-8c6e-ebda3fbc1a36" DisplayName="Send Email " sap2010:WorkflowViewState.IdRef="SendMailConnections_3" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[&quot;RI_Newsfeed_&quot; + DateTime.Now.ToString(&quot;ddMMMyyyy&quot;)]" To="[New String(){&quot;hari@qbotica.com&quot;}]" UseConnectionService="True" UseSharedMailbox="False">
+                <umam:SendMailConnections.AttachmentList>
+                  <scg:List x:TypeArguments="InArgument(upr:IResource)" Capacity="0" />
+                </umam:SendMailConnections.AttachmentList>
+                <umam:SendMailConnections.AttachmentsBackup>
+                  <usau1:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Builder">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:List x:TypeArguments="x:Object" x:Key="Existing" Capacity="1">
+                        <x:Null />
+                      </scg:List>
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umam:SendMailConnections.AttachmentsBackup>
+                <umam:SendMailConnections.InputTypeBackup>
+                  <usau1:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="HTML">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umame:BodyInputType, scg:List(x:Object)" />
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umam:SendMailConnections.InputTypeBackup>
+                <umam:SendMailConnections.MailboxBackup>
+                  <usau1:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" StoredValue="NoMailbox">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umam:SendMailConnections.MailboxBackup>
+              </umam:SendMailConnections>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_87" />
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>
